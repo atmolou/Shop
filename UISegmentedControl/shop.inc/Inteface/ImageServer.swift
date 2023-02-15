@@ -18,8 +18,8 @@ struct ImageServers : Hashable {
     var shortyDescription : [String]
     var price : [String]
     var Size : [String]
-    SizeSelect : [Int]
-    init(name: String, imageItem: [String], title: [String], shortyDescription: [String], price: [String], Size: [String],  SizeSelect : [Int]) {
+   var SizeSelect : [String]
+    init(name: String, imageItem: [String], title: [String], shortyDescription: [String], price: [String], Size: [String],  SizeSelect : [String]) {
         self.imageItem = imageItem
         self.name = name
         self.title = title
@@ -71,7 +71,7 @@ struct ItemsCollection : Hashable {
         title: ["For walk 🚶"],
         shortyDescription: ["About of Nike Jordan_violet"],
         price: ["10€"], Size: ["Size 🕺"],
-        SizeSelect: [37,38,39,40,41,42,43,44]),
+                                                SizeSelect: ["37","38","39","40","41","42","43","44"]),
                                    
         ImageServers(name: "Nike Jordan Orange", imageItem:
         ["nike_jordan_orange3", "nike_jordan_orange1",
@@ -80,29 +80,20 @@ struct ItemsCollection : Hashable {
         title: ["For summer ☀️"],
         shortyDescription: ["About of Nike Jordan_orange"],
         price: ["11€"], Size: ["Size 🏝️🏜"],
-        SizeSelect: [37,38,39,40,41,42,43,44]),
+        SizeSelect: ["37","38","39","40","41","42","43","44"]),
                                    
         ImageServers(name: "Nike Jordan Shadow", imageItem:
         ["nike-shadow_2", "nike-shadow_1","nike-shadow_3"],
         title: ["Workout & gym🏋️‍♀️"], shortyDescription: ["About of Nike Jordan_shadow"],
         price: ["12€"], Size: ["Size 💪"],
-        SizeSelect: [37,38,39,40,41,42,43,44]),
+                     SizeSelect: ["37","38","39","40","41","42","43","44"]),
                                    
         ImageServers(name: "Nike Jordan Shadow", imageItem:
         ["nike-kyrie_3", "nike-kyrie_1","nike-kyrie_2"],
         title: ["Winter ❄️"], shortyDescription: ["About of Nike Jordan_kerie"],
         price: ["13€"], Size: ["Size ☃️"],
-        SizeSelect: [37,38,39,40,41,42,43,44]),
+                     SizeSelect: ["37","38","39","40","41","42","43","44"]),
                                    
     ]
 }
 
- 
-
-
-
- 
-
-    
- 
-		

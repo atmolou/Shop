@@ -45,12 +45,14 @@ class PersonalViewController: UIViewController, DataDelegate {
     
     public var imageForPersonal  = UIImageView()
     var testImage = UIImageView()
-    //
+    //LABLES
     var TextLabelForDescription = UILabel()
     var TextLabelPrice = UILabel()
     var TextLabelSize = UILabel()
-    //
+    var TextLabelName = UILabel()
     let personalSettings = PersonalUIViewSetting()
+    //
+   
     
     lazy var  labelPrsonal : UILabel = {
         let labelPrsonal2 = UILabel()
@@ -116,13 +118,13 @@ class PersonalViewController: UIViewController, DataDelegate {
         navigationController?.pushViewController(VC, animated: true)
     }
     
-    let textField: UITextField = {
-        let tf = UITextField()
-        tf.placeholder = "Full Nameddd"
-        tf.textAlignment = .center
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        return tf
-    }()
+//    let textField: UITextField = {
+//        let tf = UITextField()
+//        tf.placeholder = "Full Nameddd"
+//        tf.textAlignment = .center
+//        tf.translatesAutoresizingMaskIntoConstraints = false
+//        return tf
+//    }()
   
     func segmentColorAppear() {
         var menuArray = ["🔴", "🟣", "🟡"]
@@ -142,11 +144,7 @@ class PersonalViewController: UIViewController, DataDelegate {
      
         self.segmnetSwitchColor.layer.masksToBounds = true
         
-        SegmentSwitch = UISegmentedControl(items: [size])
-        SegmentSwitch.translatesAutoresizingMaskIntoConstraints = false
-        self.SegmentSwitch.layer.borderWidth = 0.0
-        self.SegmentSwitch.layer.cornerRadius = 3.0
-        self.SegmentSwitch.layer.borderColor = UIColor.white.cgColor
+     
      
                                            
         
@@ -154,10 +152,11 @@ class PersonalViewController: UIViewController, DataDelegate {
     
     func segmentApper() {
      
-        
+        let segment =  UISegmentedControl()
         let image = trail[position]
     
 //        let colorPickerForSegment = ["1", "2", "3", "3"]
+        
         let unicodeArray = Array(repeating: "", count: image.imageItem.count)
         
         SegmentSwitch = UISegmentedControl(items: unicodeArray)
@@ -168,6 +167,26 @@ class PersonalViewController: UIViewController, DataDelegate {
         self.SegmentSwitch.layer.cornerRadius = 3.0
         self.SegmentSwitch.layer.borderColor = UIColor.white.cgColor
         self.SegmentSwitch.layer.masksToBounds = true
+        
+        var size = ["37","38","39","40","41","42","43","44",]
+//        let sizeModif = Array(repeating: "1", count: image.SizeSelect.count)
+        let index = segment.selectedSegmentIndex
+        let arrays = textSelector()
+        let sizeRaaaya = Array(repeating: arrays[index], count: image.SizeSelect.count )
+        SegmentSize = UISegmentedControl(items: sizeRaaaya as [Any])
+        SegmentSize.layer.borderColor = UIColor.clear.cgColor
+        SegmentSize.layer.borderWidth = 0.0
+        SegmentSize.addTarget(self, action: #selector(handleSize), for: .valueChanged)
+        SegmentSize.clipsToBounds = true
+        SegmentSize.layer.masksToBounds = true
+        
+       
+        
+    
+        
+        
+        
+        
     }
     
     
@@ -183,9 +202,12 @@ class PersonalViewController: UIViewController, DataDelegate {
 //        imageForPersonal.cornerRaduis(corners: [.topRight], radius: 20)
         
 
-        TextLabelForDescription.text = image.shortyDescription[0]
-        TextLabelPrice.text = image.price[0]
+//        TextLabelForDescription.text = image.shortyDescription[0]
+        TextLabelPrice.text = "Price: \(image.price[0])"
+        TextLabelPrice.font = UIFont.systemFont(ofSize: 15, weight: .light)
         TextLabelSize.text = image.Size[0]
+        TextLabelSize.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        TextLabelName.text = image.name
         
     }
     
@@ -205,13 +227,23 @@ class PersonalViewController: UIViewController, DataDelegate {
         view.addSubview(buttonCart)
     }
     
-    private func craeteImageArray() -> [UIImage?] {
+    private func craeteImageArray() -> [UIImage?]  {
         let image = trail[position]
         var imageArray = [UIImage?]()
         for nameImage in image.imageItem {
             imageArray.append(UIImage(named: nameImage))
         }
         return imageArray
+    }
+    
+    private func textSelector() -> [String?] {
+        let text = trail[position]
+        var textArray = [String?]()
+        
+        for size in text.SizeSelect {
+            textArray.append(size)
+        }
+        return textArray
     }
     
     @objc func segmentSwitch(_ target: UISegmentedControl) {
@@ -235,6 +267,17 @@ class PersonalViewController: UIViewController, DataDelegate {
         }
         
     }
+    @objc func handleSize(segment : UISegmentedControl) {
+        
+    
+            
+            let index = segment.selectedSegmentIndex
+            let arrays = textSelector()
+        let sizeRaaaya = Array(repeating: arrays[index], count: arrays.count )
+        
+        
+        
+    }
     
     
 
@@ -249,7 +292,8 @@ class PersonalViewController: UIViewController, DataDelegate {
         view.addSubview(self.SegmentSize)
         view.addSubview(self.TextLabelPrice)
         view.addSubview(self.TextLabelSize)
-        view.addSubview(self.textField)
+//        view.addSubview(self.textField)
+        view.addSubview(self.TextLabelName)
         setLabelConstraints()
         
         
@@ -261,7 +305,8 @@ class PersonalViewController: UIViewController, DataDelegate {
         view.addSubview(TextLabelSize)
         view.addSubview(SegmentSwitch)
         view.addSubview(SegmentSize)
-        view.addSubview(textField)
+//        view.addSubview(textField)
+        view.addSubview(TextLabelName)
         
     }
   
@@ -285,14 +330,13 @@ extension PersonalViewController {
         self.TextLabelForDescription.translatesAutoresizingMaskIntoConstraints = false
         self.TextLabelPrice.translatesAutoresizingMaskIntoConstraints = false
         self.TextLabelSize.translatesAutoresizingMaskIntoConstraints = false
+        self.TextLabelName.translatesAutoresizingMaskIntoConstraints = false
         self.SegmentSwitch.translatesAutoresizingMaskIntoConstraints = false
+        self.SegmentSize.translatesAutoresizingMaskIntoConstraints = false
         self.buttonCart.translatesAutoresizingMaskIntoConstraints = false
         self.buttonBuy.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-
-            self.personalSettings.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: -150),
-            self.personalSettings.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 150),
             
             self.imageForPersonal.centerYAnchor.constraint(equalTo:  self.view.centerYAnchor, constant: -90),
             self.imageForPersonal.widthAnchor.constraint(equalTo: self.view.widthAnchor),
@@ -301,16 +345,20 @@ extension PersonalViewController {
  
             self.TextLabelForDescription.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant:  200),
             self.TextLabelForDescription.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.TextLabelPrice.topAnchor.constraint(equalTo: self.TextLabelForDescription.topAnchor, constant: 20),
-            self.TextLabelPrice.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.TextLabelSize.topAnchor.constraint(equalTo: self.TextLabelPrice.topAnchor, constant: 20),
-            self.TextLabelSize.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 10),
+            self.TextLabelPrice.topAnchor.constraint(equalTo: self.personalSettings.topAnchor, constant: 0),
+            self.TextLabelPrice.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20),
+            self.TextLabelSize.topAnchor.constraint(equalTo: self.SegmentSize.topAnchor, constant: -35),
+            self.TextLabelSize.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10),
             
             self.SegmentSwitch.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.SegmentSwitch.bottomAnchor.constraint(equalTo: self.imageForPersonal.bottomAnchor, constant: 0),
             self.SegmentSwitch.widthAnchor.constraint(equalToConstant: 400),
             self.SegmentSwitch.heightAnchor.constraint(equalToConstant: 15),
             
+            self.SegmentSize.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.SegmentSize.bottomAnchor.constraint(equalTo: self.imageForPersonal.bottomAnchor, constant: 160),
+            self.SegmentSize.widthAnchor.constraint(equalToConstant: 400),
+            self.SegmentSize.heightAnchor.constraint(equalToConstant: 30),
             
             self.segmnetSwitchColor.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -7),
             self.segmnetSwitchColor.bottomAnchor.constraint(equalTo: self.imageForPersonal.bottomAnchor, constant: 30),
@@ -328,10 +376,19 @@ extension PersonalViewController {
            
             buttonBuy.widthAnchor.constraint(equalTo:  self.view.widthAnchor),
             
-            textField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            textField.topAnchor.constraint(equalTo: self.buttonCart.topAnchor),
-            textField.widthAnchor.constraint(equalToConstant: 100),
-            textField.heightAnchor.constraint(equalToConstant: 20),
+            TextLabelName.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20),
+            TextLabelName.bottomAnchor.constraint(equalTo: self.imageForPersonal.bottomAnchor, constant: 45),
+            TextLabelName.widthAnchor.constraint(equalToConstant: 150),
+            TextLabelName.heightAnchor.constraint(equalToConstant: 22),
+            
+            self.personalSettings.leftAnchor.constraint(equalTo: self.TextLabelPrice.leftAnchor, constant: 80),
+//            self.personalSettings.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 150),
+            
+            self.personalSettings.bottomAnchor.constraint(equalTo: self.imageForPersonal.bottomAnchor, constant: 70),
+            self.personalSettings.widthAnchor.constraint(equalToConstant: 150),
+            self.personalSettings.heightAnchor.constraint(equalToConstant: 10),
+            
+
             
          
         ])

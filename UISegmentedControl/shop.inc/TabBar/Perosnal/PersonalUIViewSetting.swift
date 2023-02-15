@@ -14,7 +14,7 @@ class PersonalUIViewSetting: UIView {
         
         let label = UILabel()
         label.text = "Men's originals"
-        label.font = UIFont.systemFont(ofSize: 18, weight:  .medium)
+        label.font = UIFont.systemFont(ofSize: 14, weight:  .light)
 //        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
