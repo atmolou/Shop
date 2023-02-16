@@ -128,7 +128,7 @@ class PersonalViewController: UIViewController, DataDelegate {
   
     func segmentColorAppear() {
         var menuArray = ["🔴", "🟣", "🟡"]
-        var size = ["39","40","41","42","43","44", "45"]
+       
         
         segmnetSwitchColor = UISegmentedControl(items: menuArray)
         segmnetSwitchColor.translatesAutoresizingMaskIntoConstraints = false
@@ -152,7 +152,7 @@ class PersonalViewController: UIViewController, DataDelegate {
     
     func segmentApper() {
      
-        let segment =  UISegmentedControl()
+//        let segment =  UISegmentedControl()
         let image = trail[position]
     
 //        let colorPickerForSegment = ["1", "2", "3", "3"]
@@ -168,31 +168,30 @@ class PersonalViewController: UIViewController, DataDelegate {
         self.SegmentSwitch.layer.borderColor = UIColor.white.cgColor
         self.SegmentSwitch.layer.masksToBounds = true
         
-        var size = ["37","38","39","40","41","42","43","44"]
-        
-        let s = image.SizeSelect
-        let indexPath = SegmentSize.selectedSegmentIndex
-        var word = String()
-        var arrays = textSelector()
-        var sayHello = 0
-        var size2 = String()
+//        let s = image.SizeSelect
+//        let indexPath = SegmentSize.selectedSegmentIndex
+//        var word = String()
+//        var arrays = textSelector()
+//        var sayHello = 0
+//        var size2 = String()
 //        s.forEach { word in
 //             word
 //        }
-        for size2 in image.SizeSelect {
+//        for size2 in image.SizeSelect {
 //            word.append(size2)
 //            sayHello += 1
-        }
+//        }
 //        MARK: ???????
-        let testCount = image.SizeSelect.count
+//        let testCount = image.SizeSelect.count
         
         
         
 //        let sizeModif = Array(repeating: "", count: image.SizeSelect.count)
-       
+        var size = ["37","38","39","40","41","42","43","44"]
         SegmentSize = UISegmentedControl(items: size)
         SegmentSize.layer.borderColor = UIColor.clear.cgColor
         SegmentSize.layer.borderWidth = 0.0
+//        MARK: - Make select in Addtarget
         SegmentSize.addTarget(self, action: #selector(handleSize), for: .valueChanged)
         SegmentSize.clipsToBounds = true
         SegmentSize.layer.masksToBounds = true
