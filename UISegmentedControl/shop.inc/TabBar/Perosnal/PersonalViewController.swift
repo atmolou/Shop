@@ -168,12 +168,29 @@ class PersonalViewController: UIViewController, DataDelegate {
         self.SegmentSwitch.layer.borderColor = UIColor.white.cgColor
         self.SegmentSwitch.layer.masksToBounds = true
         
-        var size = ["37","38","39","40","41","42","43","44",]
-//        let sizeModif = Array(repeating: "1", count: image.SizeSelect.count)
-        let index = segment.selectedSegmentIndex
-        let arrays = textSelector()
-        let sizeRaaaya = Array(repeating: arrays[index], count: image.SizeSelect.count )
-        SegmentSize = UISegmentedControl(items: sizeRaaaya as [Any])
+        var size = ["37","38","39","40","41","42","43","44"]
+        
+        let s = image.SizeSelect
+        let indexPath = SegmentSize.selectedSegmentIndex
+        var word = String()
+        var arrays = textSelector()
+        var sayHello = 0
+        var size2 = String()
+//        s.forEach { word in
+//             word
+//        }
+        for size2 in image.SizeSelect {
+            word.append(size2)
+            sayHello += 1
+        }
+//        MARK: ???????
+        let testCount = image.SizeSelect.count
+        
+        
+        
+        let sizeModif = Array(repeating: arrays[sayHello], count: image.SizeSelect.count)
+       
+        SegmentSize = UISegmentedControl(items: sizeModif)
         SegmentSize.layer.borderColor = UIColor.clear.cgColor
         SegmentSize.layer.borderWidth = 0.0
         SegmentSize.addTarget(self, action: #selector(handleSize), for: .valueChanged)
@@ -255,6 +272,18 @@ class PersonalViewController: UIViewController, DataDelegate {
         
     }
     
+    @objc func handleSize(segment : UISegmentedControl) {
+        let image = trail[position]
+            let index = segment.selectedSegmentIndex
+            let arrays = textSelector()
+        
+        
+//                let sizeModif = Array(repeating: arrays[index], count: image.SizeSelect.count)
+            
+//        let sizeMod = UISegmentedControl(items: sizeModif as [Any])
+         
+    }
+    
     @objc func SegmentColorSwitch (target : UISegmentedControl) {
         
         if target == segmnetSwitchColor{
@@ -267,18 +296,6 @@ class PersonalViewController: UIViewController, DataDelegate {
         }
         
     }
-    @objc func handleSize(segment : UISegmentedControl) {
-        
-    
-            
-            let index = segment.selectedSegmentIndex
-            let arrays = textSelector()
-        let sizeRaaaya = Array(repeating: arrays[index], count: arrays.count )
-        
-        
-        
-    }
-    
     
 
     ///personalView
