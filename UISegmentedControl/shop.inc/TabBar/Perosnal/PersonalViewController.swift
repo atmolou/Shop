@@ -180,17 +180,17 @@ class PersonalViewController: UIViewController, DataDelegate {
 //             word
 //        }
         for size2 in image.SizeSelect {
-            word.append(size2)
-            sayHello += 1
+//            word.append(size2)
+//            sayHello += 1
         }
 //        MARK: ???????
         let testCount = image.SizeSelect.count
         
         
         
-        let sizeModif = Array(repeating: arrays[sayHello], count: image.SizeSelect.count)
+//        let sizeModif = Array(repeating: "", count: image.SizeSelect.count)
        
-        SegmentSize = UISegmentedControl(items: sizeModif)
+        SegmentSize = UISegmentedControl(items: size)
         SegmentSize.layer.borderColor = UIColor.clear.cgColor
         SegmentSize.layer.borderWidth = 0.0
         SegmentSize.addTarget(self, action: #selector(handleSize), for: .valueChanged)
@@ -277,6 +277,7 @@ class PersonalViewController: UIViewController, DataDelegate {
             let index = segment.selectedSegmentIndex
             let arrays = textSelector()
         
+        TextLabelSize.text = arrays[index]
         
 //                let sizeModif = Array(repeating: arrays[index], count: image.SizeSelect.count)
             
