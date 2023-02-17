@@ -37,6 +37,7 @@
 		55F1EE8E28FEC3E6006404E3 /* UISegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1EE8D28FEC3E6006404E3 /* UISegmentedControlTests.swift */; };
 		55F1EE9828FEC3E6006404E3 /* UISegmentedControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1EE9728FEC3E6006404E3 /* UISegmentedControlUITests.swift */; };
 		55F1EE9A28FEC3E6006404E3 /* UISegmentedControlUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F1EE9928FEC3E6006404E3 /* UISegmentedControlUITestsLaunchTests.swift */; };
+		CE5D662E299E6F6B00D18E40 /* CustomSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5D662D299E6F6B00D18E40 /* CustomSegment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		55F1EE9328FEC3E6006404E3 /* UISegmentedControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UISegmentedControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F1EE9728FEC3E6006404E3 /* UISegmentedControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlUITests.swift; sourceTree = "<group>"; };
 		55F1EE9928FEC3E6006404E3 /* UISegmentedControlUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISegmentedControlUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE5D662D299E6F6B00D18E40 /* CustomSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				55504296291D2AC300A7F7AB /* TabBarViewController.swift */,
 				5550429F291D355E00A7F7AB /* UIColorExention.swift */,
 				55504299291D2AE100A7F7AB /* HomeViewController.swift */,
+				CE5D662C299E6F4100D18E40 /* CustomSegments */,
 				5593D911295351AD00A79CBC /* ShopList.swift */,
 				558CEF88292CC49C00E83C2A /* Perosnal */,
 				5550429D291D2B0000A7F7AB /* SettingViewController.swift */,
@@ -244,6 +247,14 @@
 				55F1EE9928FEC3E6006404E3 /* UISegmentedControlUITestsLaunchTests.swift */,
 			);
 			path = UISegmentedControlUITests;
+			sourceTree = "<group>";
+		};
+		CE5D662C299E6F4100D18E40 /* CustomSegments */ = {
+			isa = PBXGroup;
+			children = (
+				CE5D662D299E6F6B00D18E40 /* CustomSegment.swift */,
+			);
+			path = CustomSegments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +399,7 @@
 				55F1EE7728FEC3E5006404E3 /* AppDelegate.swift in Sources */,
 				55CA068229001D5E0036EAD7 /* LogInViewController.swift in Sources */,
 				5550429E291D2B0000A7F7AB /* SettingViewController.swift in Sources */,
+				CE5D662E299E6F6B00D18E40 /* CustomSegment.swift in Sources */,
 				55F1EE7928FEC3E5006404E3 /* SceneDelegate.swift in Sources */,
 				5588C46F29155DBB000AE31D /* InterfaceTestViewController.swift in Sources */,
 				55C6D924290EE6C4003D4226 /* ImageInterface.swift in Sources */,
