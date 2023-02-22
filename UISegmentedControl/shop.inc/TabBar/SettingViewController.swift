@@ -124,15 +124,17 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource   {
         
 
         
-        let cell2 = tableView.dequeueReusableCell(withIdentifier: cell , for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cell , for: indexPath as IndexPath)
         
-        for value in ShopList.shared.itemList {
-            cell2.textLabel?.text = value.title[0]
-            return cell2
-        }
+//        for value in ShopList.shared.itemList {
+//            cell2.textLabel?.text = value.title[0]
+//            return cell2
+//        }
+        
+        cell.textLabel?.text  = ShopList.shared.itemList[indexPath.row].title[0]
     
         
-        return cell2
+        return cell
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

@@ -152,7 +152,7 @@ class PersonalViewController: UIViewController, DataDelegate {
     
     func segmentApper() {
      
-//        let segment =  UISegmentedControl()
+       
         let image = trail[position]
     
 //        let colorPickerForSegment = ["1", "2", "3", "3"]
@@ -424,7 +424,4 @@ extension UIImageView {
         
     }
 }
-
-
-
 
