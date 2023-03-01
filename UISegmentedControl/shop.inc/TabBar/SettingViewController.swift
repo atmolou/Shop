@@ -63,7 +63,7 @@ class SettingViewController: UIViewController, DataDelegate   {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .brown
-     
+       
         setupView()
         table()
     }
@@ -83,6 +83,7 @@ class SettingViewController: UIViewController, DataDelegate   {
         view.addSubview(self.tableViewForGrabage)
         tableViewForGrabage.delegate = self
         tableViewForGrabage.dataSource = self
+        
         
     }
     
@@ -113,14 +114,14 @@ class SettingViewController: UIViewController, DataDelegate   {
 
 extension SettingViewController: UITableViewDelegate, UITableViewDataSource   {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return ArrayConnecter.count
+        //        return ArrayConnecter.count
         let shoppingList = ShopList.shared.itemList
-//        var value = Int()
-//        for value in shoppingList {
-//             print(value)
-//        }
+        //        var value = Int()
+        //        for value in shoppingList {
+        //             print(value)
+        //        }
         print("tableView()-> Struct \(shoppingList.count)")
-//        return ShopList.shared.itemList.count
+        //        return ShopList.shared.itemList.count
         print("tableView()-> Int \(shoppingList.count)")
         
         return shoppingList.count
@@ -129,22 +130,49 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource   {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    
-        let cell = tableView.dequeueReusableCell(withIdentifier: cell , for: indexPath as IndexPath)
         
-        
-//        for value in ShopList.shared.itemList {
-//            cell2.textLabel?.text = value.title[0]
-//            return cell2
+        var cell = tableView.dequeueReusableCell(withIdentifier: cell , for: indexPath as IndexPath)
+//        let shoppingList = ShopList.shared.itemList
+//        if shoppingList.count == 1 {
+//            print("doneTest")
+//        } else if shoppingList.count >= 3 {
+//            tableView.beginUpdates()
 //        }
+        
+        //        for value in ShopList.shared.itemList {
+        //            cell2.textLabel?.text = value.title[0]
+        //            return cell2
+        //        }
+        
+        //        if let visibleCells = tableView.indexPathsForVisibleRows {
+        
+        
+        //            for cells in visibleCells {
+        //                if let cell = tableView.cellForRow(at: cells) {
+        //                    cell.textLabel?.text  = ShopList.shared.itemList[indexPath.row].title[0]
+        //                }
+        //            }
+        //        }
         
         cell.textLabel?.text  = ShopList.shared.itemList[indexPath.row].title[0]
         
         tableView.beginUpdates()
-//        MARK: Test property
-        tableView.reloadSections(NSIndexSet(index:  0) as IndexSet, with: UITableView.RowAnimation.none)
-        tableView.endUpdates()
-        print("tableView()-> Int \(cell)")
+        
+        
+        
+//        if cell.count == 1 {
+//            print("istn")
+//        }
+        
+//        tableView.reloadData()
+    
+    //        MARK: Test property
+    tableView.reloadSections(NSIndexSet(index:  0) as IndexSet, with: UITableView.RowAnimation.none)
+    //        let indexPath = IndexPath(row:0, section:0)
+    //        tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
+    tableView.endUpdates()
+    print("tableView()-> Int \(cell)")
+    
         return cell
     }
     
