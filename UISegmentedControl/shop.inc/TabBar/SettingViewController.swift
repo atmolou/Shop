@@ -115,16 +115,23 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource   {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return ArrayConnecter.count
         let shoppingList = ShopList.shared.itemList
+//        var value = Int()
+//        for value in shoppingList {
+//             print(value)
+//        }
+        print("tableView()-> Struct \(shoppingList.count)")
 //        return ShopList.shared.itemList.count
+        print("tableView()-> Int \(shoppingList.count)")
+        
         return shoppingList.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-
-        
+    
         let cell = tableView.dequeueReusableCell(withIdentifier: cell , for: indexPath as IndexPath)
+        
         
 //        for value in ShopList.shared.itemList {
 //            cell2.textLabel?.text = value.title[0]
@@ -132,8 +139,9 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource   {
 //        }
         
         cell.textLabel?.text  = ShopList.shared.itemList[indexPath.row].title[0]
-    
         
+    
+        print("tableView()-> Int \(cell)")
         return cell
     }
     
@@ -142,6 +150,21 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource   {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        tableView.indexPathsForVisibleRows?.forEach({
+//            if let cell = tableView.cellForRow(at: $0) as cell {
+//                cell.confugite()
+//            }
+//        })
+        
+        let item : [ImageServers] = []
+        
+        if editingStyle == .insert {
+            tableView.beginUpdates()
+            ShopList.shared.itemList.insert(contentsOf: item, at: indexPath.row)
+//            myArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade )
+            tableView.endUpdates()
+        }
         
         if editingStyle == .delete {
             tableView.beginUpdates()

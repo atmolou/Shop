@@ -28,7 +28,8 @@ struct ImageServers : Hashable {
         self.Size = Size
         self.SizeSelect = SizeSelect
     }
-        
+  
+    
 }
 
 

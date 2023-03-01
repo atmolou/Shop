@@ -51,6 +51,8 @@ class TabBarViewController: UITabBarController {
     private func generateVC(viewContoller : UIViewController, title : String, image :  UIImage?) -> UIViewController {
         viewContoller.tabBarItem.title = title
         viewContoller.tabBarItem.image = image
+        
+        
          
         return viewContoller
 

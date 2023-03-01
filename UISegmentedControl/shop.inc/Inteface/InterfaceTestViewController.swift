@@ -19,7 +19,7 @@ class InterfaceTestViewController: UIViewController {
     var data = ItemsCollection.collectionItems
     
     
-    
+    let but = UIButton()
     
 
     override func viewDidLoad() {
@@ -30,10 +30,21 @@ class InterfaceTestViewController: UIViewController {
         imagess = data
         
         configurateTableView()
+        
+        but.frame = CGRect(x: 150, y: 150 , width: 50, height: 50)
+        but.tintColor = .systemRed
+        but.setBackgroundImage(UIImage(systemName: "plus"), for: .normal)
+        but.addTarget(self, action: #selector(hello), for: .touchUpInside)
+        
+//        view.addSubview(but)
 
     }
     
-    
+    @objc func hello() {
+        let to = SettingViewController()
+        
+        navigationController?.pushViewController(to, animated: true)
+    }
     func titileINC() {
         self.view.backgroundColor = UIColor.white
         self.navigationItem.title = "Shoes"

@@ -41,7 +41,7 @@ class PersonalViewController: UIViewController, DataDelegate {
     
     // Массив с ImageInterface
     var identifire = 0
-    lazy var item: ItemNO = Images.shoes4[identifire]
+    lazy var item: ImageServers = ItemsCollection.collectionItems[identifire]
     
     public var imageForPersonal  = UIImageView()
     var testImage = UIImageView()

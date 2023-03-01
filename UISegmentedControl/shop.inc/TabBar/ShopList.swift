@@ -14,10 +14,11 @@ struct ShopList {
 
     mutating func add(_ item : ImageServers) {
         itemList.append(item)
+        print("mutating \(item)")
     }
 
-    mutating func remove(_ item : ImageServers) {
-        itemList.append(item)
-    }
+//    mutating func remove(_ item : ImageServers) {
+//        itemList.append(item)
+//    }
 }
 
