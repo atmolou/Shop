@@ -140,7 +140,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource   {
         
         cell.textLabel?.text  = ShopList.shared.itemList[indexPath.row].title[0]
         
-    
+        tableView.beginUpdates()
+//        MARK: Test property
+        tableView.reloadSections(NSIndexSet(index:  0) as IndexSet, with: UITableView.RowAnimation.none)
+        tableView.endUpdates()
         print("tableView()-> Int \(cell)")
         return cell
     }
@@ -157,15 +160,19 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource   {
 //        })
         
         let item : [ImageServers] = []
+       
         
-        if editingStyle == .insert {
-            tableView.beginUpdates()
-            ShopList.shared.itemList.insert(contentsOf: item, at: indexPath.row)
-//            myArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade )
-            tableView.endUpdates()
-        }
         
+//        Refresh data
+//        if editingStyle == .insert {
+//            tableView.beginUpdates()
+//            ShopList.shared.itemList.insert(contentsOf: item, at: indexPath.row)
+////            myArray.remove(at: indexPath.row)
+////            tableView.deleteRows(at: [indexPath], with: .fade )
+////            tableView.insertRows(at: [indexPath], with: .fade)
+//            tableView.endUpdates()
+//        }
+//
         if editingStyle == .delete {
             tableView.beginUpdates()
             ShopList.shared.itemList.remove(at: indexPath.row)
