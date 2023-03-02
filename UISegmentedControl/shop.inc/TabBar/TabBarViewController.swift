@@ -33,7 +33,7 @@ class TabBarViewController: UITabBarController {
     private func generatTabBar() {
         viewControllers = [
             
-        generateVC(viewContoller: SplashAnimViewController(),
+        generateVC(viewContoller: HomeViewController(),
                    title: "Home",
                    image: UIImage(systemName: "house.fill")),
         

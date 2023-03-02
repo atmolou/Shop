@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "type": "featured",
+        "title": "dd",
+        "subtitle": "dd",
+        "items": [
+            {
+                "id": 1,
+                "tagline": "Featured",
+                "name": "Strokey",
+                "subheading": "You'll never stroke the same way again.",
+                "image": "Heading1",
+                "iap": true
+            },
+            {
+                "id": 2,
+                "tagline": "Featured",
+                "name": "Strokey",
+                "subheading": "You'll never stroke the same way again.",
+                "image": "Heading1",
+                "iap": true
+            },
+        ]
+    },
+    {
+        "id": 11,
+        "type": "mediumTable",
+        "title": "See it in Dark Mode",
+        "subtitle": "These apps are easy on the eyes",
+        "items": [
+            {
+                "id": 1,
+                "tagline": "Featured",
+                "name": "Strokey",
+                "subheading": "You'll never stroke the same way again.",
+                "image": "iOS1",
+                "iap": true
+            },
+            {
+                "id": 2,
+                "tagline": "See it in dark mode",
+                "name": "Smartwhirl",
+                "subheading": "People who love whirling just like you!",
+                "image": "iOS2",
+                "iap": false
+            },
+    ]
+    }
+]
