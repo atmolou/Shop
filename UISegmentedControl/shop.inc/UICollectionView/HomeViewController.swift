@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
 //        MARK: 14:57
+        collectionView.register(SelectionHeader.self, forCellWithReuseIdentifier: SelectionHeader.reuseIdentifier)
         collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
         collectionView.register(MediumCell.self, forCellWithReuseIdentifier: MediumCell.reuseIdentifier)
 //        MARK: После создания снепшота!!
@@ -47,7 +48,16 @@ class HomeViewController: UIViewController {
             }
             
         }
- 
+// MARK: Заголовок раздела
+        
+        dataSource?.supplementaryViewProvider = { [weak self]
+//            MARK: перечимление свойств (переменных для таких как я!)
+            collectionView, kind, indexPath in
+            
+            guard let selectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SelectionHeader.reuseIdentifier, for: indexPath) as? Selection else {
+                return nil
+            }
+        }
     }
 
     func createCompositionLayout() -> UICollectionViewLayout {
@@ -87,6 +97,7 @@ class HomeViewController: UIViewController {
     }
     
     func createMediumTableSection(using selection: Selection)-> NSCollectionLayoutSection {
+//  MARK: - Настройка контейнера
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:.fractionalHeight(0.3))
         
         let layoutItems = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -96,7 +107,19 @@ class HomeViewController: UIViewController {
         
         let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: layoutGroupSize, subitems: [layoutItems])
         let layoutSelection = NSCollectionLayoutSection(group: layoutGroup)
+//         MARK: -  поведение прокрутки
         layoutSelection.orthogonalScrollingBehavior = .groupPagingCentered
+        
+        
+        let layoutHeaderSelectionSize = NSCollectionLayoutSize(widthDimension: .fractionalHeight(0.93), heightDimension: .estimated(80))
+        
+        
+        let layoutHeaderSelection = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutHeaderSelectionSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        layoutSelection.boundarySupplementaryItems = [layoutHeaderSelection]
+        
+        
+        
         return layoutSelection
         
     }

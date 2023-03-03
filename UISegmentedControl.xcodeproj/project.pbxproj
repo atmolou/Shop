@@ -46,6 +46,7 @@
 		CE63DEA529B09E9200D4563D /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63DE9E29B09E9200D4563D /* FeaturedCell.swift */; };
 		CE63DEA729B09FD400D4563D /* ScartScreen.json in Resources */ = {isa = PBXBuildFile; fileRef = CE63DEA629B09FD400D4563D /* ScartScreen.json */; };
 		CE63DEA929B0A60800D4563D /* MediumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63DEA829B0A60800D4563D /* MediumCell.swift */; };
+		CE63DEAC29B1F78200D4563D /* SelectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63DEAB29B1F78200D4563D /* SelectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		CE63DE9E29B09E9200D4563D /* FeaturedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
 		CE63DEA629B09FD400D4563D /* ScartScreen.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ScartScreen.json; sourceTree = "<group>"; };
 		CE63DEA829B0A60800D4563D /* MediumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCell.swift; sourceTree = "<group>"; };
+		CE63DEAB29B1F78200D4563D /* SelectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 			children = (
 				CE63DE9529B09E9200D4563D /* Decoder */,
 				CE63DE9729B09E9200D4563D /* HomeViewController.swift */,
+				CE63DEAA29B1F6C100D4563D /* Header */,
 				CE63DE9829B09E9200D4563D /* Structs */,
 				CE63DE9C29B09E9200D4563D /* Cells Tune */,
 			);
@@ -311,6 +314,14 @@
 				CE63DE9E29B09E9200D4563D /* FeaturedCell.swift */,
 			);
 			path = "Cells Tune";
+			sourceTree = "<group>";
+		};
+		CE63DEAA29B1F6C100D4563D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CE63DEAB29B1F78200D4563D /* SelectionHeader.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +458,7 @@
 			files = (
 				CE63DEA429B09E9200D4563D /* SelfConfigurationCells.swift in Sources */,
 				558911D62913FE3900D7026D /* ImageServer.swift in Sources */,
+				CE63DEAC29B1F78200D4563D /* SelectionHeader.swift in Sources */,
 				550237A32901CC8700303CA3 /* DateModel.swift in Sources */,
 				559E7E192902E75F008A33E9 /* SplashStruct.swift in Sources */,
 				CE63DEA329B09E9200D4563D /* App.swift in Sources */,

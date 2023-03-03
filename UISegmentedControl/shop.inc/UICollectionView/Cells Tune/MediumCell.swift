@@ -36,9 +36,12 @@ class MediumCell: UICollectionViewCell, SelfCConfigurationCell {
         innerStack.axis = .vertical
         
         let outStackView = UIStackView(arrangedSubviews: [imageViewsss, innerStack, buyButton])
+        outStackView.alignment = .center
+        outStackView.spacing = 10
+        
         
         imageViewsss.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        buyButton.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        buyButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
         outStackView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(outStackView)
@@ -60,7 +63,7 @@ class MediumCell: UICollectionViewCell, SelfCConfigurationCell {
         
         name.text  = app.name
         subtitle.text = app.subheading
-//        imageViewsss.image = UIImage(named: app.image)
+        imageViewsss.image = UIImage(named: app.image)
         
     }
     
