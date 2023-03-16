@@ -7,182 +7,82 @@
         "items": [
             {
                 "id": 1,
-                "tagline": "Featured",
-                "name": "Strokey",
-                "subheading": "You'll never stroke the same way again.",
-                "image": "Heading1",
+                "tagline": "Availble",
+                "name": "Home",
+                "subheading": "New colection!",
+                "image": "Image",
                 "iap": true
             },
             {
                 "id": 2,
-                "tagline": "Featured",
-                "name": "Strokey",
+                "tagline": "Availble",
+                "name": "Sale",
                 "subheading": "You'll never stroke the same way again.",
-                "image": "Heading2",
+                "image": "Image1",
                 "iap": true
             },
+            {
+                "id": 3,
+                "tagline": "******",
+                "name": "Coming soon!",
+                "subheading": "Track own news",
+                "image": "gradi",
+                "iap": true
+            },
+
         ]
+        
     },
+
+
     {
-        "id": 2,
-        "type": "mediumTable",
-        "title": "See it in Dark Mode",
-        "subtitle": "These apps are easy on the eyes",
+        "id": 4,
+        "type": "smallTable",
+        "title": "Top categories",
+        "subtitle": "",
         "items": [
             {
-                "id": 11,
-                "tagline": "Featured",
-                "name": "Strokey",
-                "subheading": "You'll never stroke the same way again.",
-                "image": "iOS1",
+                "id": 31,
+                "tagline": "",
+                "name": "Shoes",
+                "subheading": "",
+                "image": "Category1",
                 "iap": true
             },
             {
-                "id": 12,
-                "tagline": "See it in dark mode",
-                "name": "Smartwhirl",
-                "subheading": "People who love whirling just like you!",
-                "image": "iOS2",
+                "id": 32,
+                "tagline": "",
+                "name": "Other stuff",
+                "subheading": "",
+                "image": "Category2",
                 "iap": false
             },
             {
-                "id": 13,
-                "tagline": "New update",
-                "name": "Professorify",
-                "subheading": "Introducing the world’s first experienced professor.",
-                "image": "iOS3",
+                "id": 33,
+                "tagline": "",
+                "name": "Coming soon",
+                "subheading": "",
+                "image": "Category3",
                 "iap": true
             },
             {
-                "id": 14,
-                "tagline": "Featured",
-                "name": "SituationMe",
-                "subheading": "Your Situation. Dedicated.",
-                "image": "iOS4",
+                "id": 34,
+                "tagline": "",
+                "name": "Coming soon",
+                "subheading": "",
+                "image": "Category4",
                 "iap": false
             },
             {
-                "id": 15,
-                "tagline": "New update",
-                "name": "Squeally",
-                "subheading": "Motivate your niche in the squealing ecosystem.",
-                "image": "iOS5",
-                "iap": true
-            },
-            {
-                "id": 16,
-                "tagline": "See it in dark mode",
-                "name": "youplayer",
-                "subheading": "Harmonize your inner player.",
-                "image": "iOS6",
-                "iap": false
-            },
-            {
-                "id": 17,
-                "tagline": "Must-have app",
-                "name": "Spellnow",
-                "subheading": "Dare to spell the smart way.",
-                "image": "iOS7",
-                "iap": true
-            },
-            {
-                "id": 18,
-                "tagline": "New update",
-                "name": "S.A.C.K.",
-                "subheading": "Sack people online using our cloud software.",
-                "image": "iOS8",
-                "iap": false
-            },
-            {
-                "id": 19,
-                "tagline": "See it in dark mode",
-                "name": "Yodely",
-                "subheading": "You like to yodel. Yodely does too.",
-                "image": "iOS9",
+                "id": 35,
+                "tagline": "",
+                "name": "Coming soon",
+                "subheading": "",
+                "image": "Category5",
                 "iap": true
             }
         ]
     },
-    
-    
-    {
-        "id": 3,
-        "type": "mediumTable",
-        "title": "See it in Dark Mode",
-        "subtitle": "These apps are easy on the eyes",
-        "items": [
-            {
-                "id": 21,
-                "tagline": "Featured",
-                "name": "Strokey",
-                "subheading": "You'll never stroke the same way again.",
-                "image": "iOS1",
-                "iap": true
-            },
-            {
-                "id": 22,
-                "tagline": "See it in dark mode",
-                "name": "Smartwhirl",
-                "subheading": "People who love whirling just like you!",
-                "image": "iOS2",
-                "iap": false
-            },
-            {
-                "id": 23,
-                "tagline": "New update",
-                "name": "Professorify",
-                "subheading": "Introducing the world’s first experienced professor.",
-                "image": "iOS3",
-                "iap": true
-            },
-            {
-                "id": 24,
-                "tagline": "Featured",
-                "name": "SituationMe",
-                "subheading": "Your Situation. Dedicated.",
-                "image": "iOS4",
-                "iap": false
-            },
-            {
-                "id": 25,
-                "tagline": "New update",
-                "name": "Squeally",
-                "subheading": "Motivate your niche in the squealing ecosystem.",
-                "image": "iOS5",
-                "iap": true
-            },
-            {
-                "id": 26,
-                "tagline": "See it in dark mode",
-                "name": "youplayer",
-                "subheading": "Harmonize your inner player.",
-                "image": "iOS6",
-                "iap": false
-            },
-            {
-                "id": 27,
-                "tagline": "Must-have app",
-                "name": "Spellnow",
-                "subheading": "Dare to spell the smart way.",
-                "image": "iOS7",
-                "iap": true
-            },
-            {
-                "id": 28,
-                "tagline": "New update",
-                "name": "S.A.C.K.",
-                "subheading": "Sack people online using our cloud software.",
-                "image": "iOS8",
-                "iap": false
-            },
-            {
-                "id": 29,
-                "tagline": "See it in dark mode",
-                "name": "Yodely",
-                "subheading": "You like to yodel. Yodely does too.",
-                "image": "iOS9",
-                "iap": true
-            }
-        ]
-    },
+   
+   
 ]
